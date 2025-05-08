@@ -83,6 +83,22 @@
       display: block;
     }
 
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem; 
+      flex-wrap: wrap; 
+      margin: 1rem 0;
+    }
+    
+    .image-row img {
+      flex: 1;
+      max-width: 48%;
+      height: auto;
+      border-radius: 10px;
+    }
+    
     .center-image {
       display: flex;
       justify-content: center;
@@ -153,14 +169,17 @@
 
     <div class="card">
       <h2>Survival Analysis</h2>
-      <img src="figs/surv1.png" alt="Survival Analysis" class="image-placeholder" style="width: 40%;" >
-      <img src="figs/surv2.png" alt="Survival Analysis" class="image-placeholder" style="width: 40%;" >
+          <div class="image-row">
+            <img src="figs/surv1.png" alt="Figure 1" />
+            <img src="figs/surv2.png" alt="Figure 2" />
+          </div>
     </div>
+    
 
     <div class="card">
       <h2>Intervention Planning</h2>
       <img src="figs/intervention.png" alt="Intervention Planning" class="image-placeholder" style="width: 70%;" >
-      <img src="figs/tab_in.png" alt="Intervention Planning" class="image-placeholder">
+      <img src="figs/tab_in.png" alt="Intervention Planning" class="image-placeholder" style="width: 90%;" >
     </div>
 
     <div class="card">

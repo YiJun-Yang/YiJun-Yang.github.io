@@ -36,7 +36,7 @@
 
     h3 {
       margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       font-weight: 400;
       color: #555;
     }
@@ -49,6 +49,23 @@
     a {
       color: var(--accent-color);
       text-decoration: none;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.5rem 1.2rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #005f87;
     }
 
     .card {
@@ -92,30 +109,24 @@
     <h1>Navigation World Models</h1>
     <h3>CVPR 2025 (Oral)</h3>
 
-    <div class="card">
-      <h2>Authors</h2>
-      <p>
-        Yijun Yang<sup>1</sup>, Zhao-Yang Wang<sup>2</sup>, Qiuping Liu<sup>3</sup>, Shuwen Sun<sup>3</sup>, Kang Wang<sup>4</sup>, 
-        Rama Chellappa<sup>2</sup>, Zongwei Zhou<sup>2</sup>, Alan Yuille<sup>2</sup>, Lei Zhu<sup>1,5,†</sup>, 
-        Yu-Dong Zhang<sup>3</sup>, Jieneng Chen<sup>2,†</sup>
-      </p>
-      <p>
-        <sup>1</sup>The Hong Kong University of Science and Technology (Guangzhou)<br/>
-        <sup>2</sup>Johns Hopkins University<br/>
-        <sup>3</sup>The First Affiliated Hospital of Nanjing Medical University<br/>
-        <sup>4</sup>University of California, San Francisco<br/>
-        <sup>5</sup>The Hong Kong University of Science and Technology
-      </p>
+    <div style="margin-bottom: 1.5rem;">
+      <a href="https://arxiv.org/abs/2412.03572" class="button">📄 Paper</a>
+      <a href="https://github.com/amirbar/nwm" class="button">💻 Code</a>
+      <a href="https://huggingface.co/amirbar/nwm" class="button">🧠 Model</a>
     </div>
 
-    <div class="card">
-      <h2>Resources</h2>
-      <p>
-        <a href="https://arxiv.org/abs/2412.03572">Paper</a> |
-        <a href="https://github.com/amirbar/nwm">Code</a> |
-        <a href="https://huggingface.co/amirbar/nwm">Model</a>
-      </p>
-    </div>
+    <p>
+      Yijun Yang<sup>1</sup>, Zhao-Yang Wang<sup>2</sup>, Qiuping Liu<sup>3</sup>, Shuwen Sun<sup>3</sup>, Kang Wang<sup>4</sup>, 
+      Rama Chellappa<sup>2</sup>, Zongwei Zhou<sup>2</sup>, Alan Yuille<sup>2</sup>, Lei Zhu<sup>1,5,†</sup>, 
+      Yu-Dong Zhang<sup>3</sup>, Jieneng Chen<sup>2,†</sup>
+    </p>
+    <p>
+      <sup>1</sup>The Hong Kong University of Science and Technology (Guangzhou)<br />
+      <sup>2</sup>Johns Hopkins University<br />
+      <sup>3</sup>The First Affiliated Hospital of Nanjing Medical University<br />
+      <sup>4</sup>University of California, San Francisco<br />
+      <sup>5</sup>The Hong Kong University of Science and Technology
+    </p>
 
     <div class="card">
       <h2>Abstract</h2>

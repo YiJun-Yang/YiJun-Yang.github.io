@@ -1,73 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Navigation World Models</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #f9f9fb;
+      --text-color: #333;
+      --accent-color: #4f46e5;
+      --card-bg: #ffffff;
+      --code-bg: #f1f3f5;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 40px;
-      max-width: 900px;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
     }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+    }
+
     h1, h2, h3 {
-      color: #333;
+      color: var(--accent-color);
     }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    h3 {
+      margin-top: -0.5rem;
+      font-weight: 400;
+      color: #666;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
     .video-placeholder {
-      width: 100%;
+      background-color: #e0e7ff;
       height: 300px;
-      background-color: #eee;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #666;
-      margin: 10px 0;
+      color: #4f46e5;
+      font-weight: bold;
+      border-radius: 10px;
+      margin-top: 1rem;
     }
+
     pre {
-      background: #f4f4f4;
-      padding: 10px;
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 8px;
       overflow-x: auto;
+    }
+
+    .footer {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+      padding: 2rem 0;
     }
   </style>
 </head>
 <body>
 
-  <h1>Medical World Model</h1>
-  <h3>arXiv</h3>
-  <p>
-     Yijun Yang, Zhao-Yang Wang, Qiuping Liu, Shuwen Sun, Kang Wang, Rama Chellappa, Zongwei Zhou, Alan Yuille, Lei Zhu, Yu-Dong Zhang, Jieneng Chen
-  </p>
-  <p>
-    <strong>Resources:</strong>
-    <a href="https://arxiv.org/abs/2412.03572">Paper</a> |
-    <a href="https://github.com/amirbar/nwm">Code</a> |
-    <a href="https://huggingface.co/amirbar/nwm">Models</a>
-  </p>
+  <div class="container">
+    <h1>Navigation World Models</h1>
+    <h3>CVPR 2025 (Oral)</h3>
 
-  <h2>Abstract</h2>
-  <p>
-    Navigation World Model (NWM) is a controllable video generation model that predicts future visual observations from past visual input and navigation actions. It uses Conditional Diffusion Transformer (CDiT) to capture complex environmental dynamics and enables planning in both familiar and novel environments.
-  </p>
+    <p><strong>Authors:</strong> Amir Bar, Gaoyue Zhou, Danny Tran, Trevor Darrell, Yann LeCun</p>
+    <p>
+      <strong>Resources:</strong>
+      <a href="https://arxiv.org/abs/2412.03572">Paper</a> |
+      <a href="https://github.com/amirbar/nwm">Code</a> |
+      <a href="https://huggingface.co/amirbar/nwm">Model</a>
+    </p>
 
-  <h2>Trajectory Following in Known Environments</h2>
-  <div class="video-placeholder">Video Example Placeholder</div>
+    <div class="card">
+      <h2>Abstract</h2>
+      <p>
+        Navigation World Models (NWM) predict future visual observations from past ones and actions using a Conditional Diffusion Transformer. They support planning in both known and novel environments.
+      </p>
+    </div>
 
-  <h2>Navigation in Unseen Environments</h2>
-  <div class="video-placeholder">Video Example Placeholder</div>
+    <div class="card">
+      <h2>Trajectory Following</h2>
+      <div class="video-placeholder">Video Placeholder</div>
+    </div>
 
-  <h2>Baselines and Ablations</h2>
-  <div class="video-placeholder">Video Example Placeholder</div>
+    <div class="card">
+      <h2>Navigation in Unseen Environments</h2>
+      <div class="video-placeholder">Video Placeholder</div>
+    </div>
 
-  <h2>Joint Planning with NoMaD</h2>
-  <div class="video-placeholder">Video Example Placeholder</div>
+    <div class="card">
+      <h2>Baselines and Ablations</h2>
+      <div class="video-placeholder">Video Placeholder</div>
+    </div>
 
-  <h2>Limitations</h2>
-  <p>
-    In unfamiliar environments, the model may exhibit mode collapse, generating increasingly similar frames to those seen during training.
-  </p>
+    <div class="card">
+      <h2>Joint Planning with NoMaD</h2>
+      <div class="video-placeholder">Video Placeholder</div>
+    </div>
 
-  <h2>BibTeX Citation</h2>
-  <pre>
+    <div class="card">
+      <h2>Limitations</h2>
+      <p>The model may suffer from mode collapse in unfamiliar environments, generating repetitive or overfit visual outputs.</p>
+    </div>
+
+    <div class="card">
+      <h2>BibTeX Citation</h2>
+      <pre>
 @misc{bar2024navigationworldmodels,
   title={Navigation World Models},
   author={Amir Bar and Gaoyue Zhou and Danny Tran and Trevor Darrell and Yann LeCun},
@@ -77,7 +141,13 @@
   primaryClass={cs.CV},
   url={https://arxiv.org/abs/2412.03572},
 }
-  </pre>
+      </pre>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Navigation World Models | Designed by ChatGPT
+    </div>
+  </div>
 
 </body>
 </html>

@@ -76,16 +76,17 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    .video-placeholder {
-      background-color: #d0e8ff;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #0077b6;
-      font-weight: bold;
+    .image-placeholder {
+      width: 100%;
+      height: auto;
       border-radius: 10px;
       margin-top: 1rem;
+    }
+
+    .center-image {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
     }
 
     pre {
@@ -101,6 +102,10 @@
       font-size: 0.9rem;
       padding: 2rem 0;
     }
+
+    .counter {
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -110,46 +115,50 @@
     <h3>arXiv, 2025</h3>
 
     <div style="margin-bottom: 1.5rem;">
-      <a href="hhttps://yijun-yang.github.io/" class="button">Paper</a>
+      <a href="https://yijun-yang.github.io/" class="button">Paper</a>
       <a href="https://github.com/scott-yjyang/MeWM" class="button">Code</a>
-<!--       <a href="https://huggingface.co/amirbar/nwm" class="button">Models</a> -->
     </div>
 
-<p style="color: #666; margin-top: 1.5rem;">
-  Yijun Yang<sup>1</sup>, Zhao-Yang Wang<sup>2</sup>, Qiuping Liu<sup>3</sup>, Shuwen Sun<sup>3</sup>, Kang Wang<sup>4</sup>, 
-  Rama Chellappa<sup>2</sup>, Zongwei Zhou<sup>2</sup>, Alan Yuille<sup>2</sup>,<br />Lei Zhu<sup>1,5,†</sup>, 
-  Yu-Dong Zhang<sup>3</sup>, Jieneng Chen<sup>2,†</sup>
-</p>
-<p style="color: #666;">
-  <sup>1</sup>The Hong Kong University of Science and Technology (Guangzhou)<br />
-  <sup>2</sup>Johns Hopkins University<br />
-  <sup>3</sup>The First Affiliated Hospital of Nanjing Medical University<br />
-  <sup>4</sup>University of California, San Francisco<br />
-  <sup>5</sup>The Hong Kong University of Science and Technology<br />
-  <sup>†</sup>Corresponding Authors
-</p>
+    <p style="color: #666; margin-top: 1.5rem;">
+      Yijun Yang<sup>1</sup>, Zhao-Yang Wang<sup>2</sup>, Qiuping Liu<sup>3</sup>, Shuwen Sun<sup>3</sup>, Kang Wang<sup>4</sup>, 
+      Rama Chellappa<sup>2</sup>, Zongwei Zhou<sup>2</sup>, Alan Yuille<sup>2</sup>,<br />Lei Zhu<sup>1,5,†</sup>, 
+      Yu-Dong Zhang<sup>3</sup>, Jieneng Chen<sup>2,†</sup>
+    </p>
+    <p style="color: #666;">
+      <sup>1</sup>The Hong Kong University of Science and Technology (Guangzhou)<br />
+      <sup>2</sup>Johns Hopkins University<br />
+      <sup>3</sup>The First Affiliated Hospital of Nanjing Medical University<br />
+      <sup>4</sup>University of California, San Francisco<br />
+      <sup>5</sup>The Hong Kong University of Science and Technology<br />
+      <sup>†</sup>Corresponding Authors
+    </p>
+
+    <!-- Centered Top Image -->
+    <div class="center-image">
+      <img src="your_image_path/top_visual.png" alt="Main Visual" class="image-placeholder" style="max-width: 100%; height: auto;">
+    </div>
 
     <div class="card">
       <h2>Abstract</h2>
       <p>
-Medical World Model (MeWM) is a generative model that simulates future disease states conditioned on clinical decisions. It integrates vision-language policy models to generate treatment plans and tumor dynamics models to predict visual disease progression or regression. An inverse dynamics module enables survival-guided evaluation of treatment efficacy and selection of optimal interventions. MeWM synthesizes post-treatment tumors with high realism validated by radiologists and outperforms medical-specialized GPTs in personalized treatment planning. It enhances interventional decision-making, improving the F1-score for optimal TACE protocol selection by 13%, demonstrating its potential as a second reader in clinical workflows.      </p>
+        Medical World Model (MeWM) is a generative model that simulates future disease states conditioned on clinical decisions. It integrates vision-language policy models to generate treatment plans and tumor dynamics models to predict visual disease progression or regression. An inverse dynamics module enables survival-guided evaluation of treatment efficacy and selection of optimal interventions. MeWM synthesizes post-treatment tumors with high realism validated by radiologists and outperforms medical-specialized GPTs in personalized treatment planning. It enhances interventional decision-making, improving the F1-score for optimal TACE protocol selection by 13%, demonstrating its potential as a second reader in clinical workflows.
+      </p>
     </div>
 
     <div class="card">
       <h2>Tumor Generation</h2>
-      <div class="video-placeholder">Video Placeholder</div>
+      <img src="your_image_path/tumor_generation.png" alt="Tumor Generation" class="image-placeholder">
     </div>
 
     <div class="card">
       <h2>Survival Analysis</h2>
-      <div class="video-placeholder">Video Placeholder</div>
+      <img src="your_image_path/survival_analysis.png" alt="Survival Analysis" class="image-placeholder">
     </div>
 
     <div class="card">
       <h2>Intervention Planning</h2>
-      <div class="video-placeholder">Video Placeholder</div>
+      <img src="your_image_path/intervention_planning.png" alt="Intervention Planning" class="image-placeholder">
     </div>
-
 
     <div class="card">
       <h2>Limitations</h2>
@@ -161,12 +170,24 @@ Medical World Model (MeWM) is a generative model that simulates future disease s
     <div class="card">
       <h2>BibTeX Citation</h2>
       <pre>
-
+@misc{yang2025medicalworldmodel,
+  title={Medical World Model},
+  author={Yijun Yang and Zhao-Yang Wang and Qiuping Liu and Shuwen Sun and Kang Wang and 
+          Rama Chellappa and Zongwei Zhou and Alan Yuille and Lei Zhu and Yu-Dong Zhang and Jieneng Chen},
+  year={2025},
+  eprint={arXiv:2505.xxxxx},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+}
       </pre>
     </div>
 
     <div class="footer">
       &copy; 2025 Medical World Model
+      <div class="counter">
+        Visitors:
+        <img src="https://hitwebcounter.com/counter/counter.php?page=1234567&style=0006&nbdigits=5&type=page&initCount=0" title="Counter" alt="web counter"/>
+      </div>
     </div>
   </div>
 

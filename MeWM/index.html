@@ -91,17 +91,27 @@
     .image-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 1rem; 
-      flex-wrap: wrap; 
-      margin: 1rem 0;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .image-row figure {
+      flex: 1;
+      text-align: center;
+      max-width: 48%;
     }
     
     .image-row img {
-      flex: 1;
-      max-width: 48%;
+      width: 100%;
       height: auto;
       border-radius: 10px;
+    }
+    
+    .image-row figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+      font-style: italic;
     }
     
     .center-image {

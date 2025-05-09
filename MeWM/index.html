@@ -151,6 +151,18 @@
       color: #555;
       font-style: italic;
     }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+    
   </style>
 </head>
 <body>
@@ -183,7 +195,7 @@
       <img src="figs/framework.png" alt="Main Visual" class="image-placeholder" style="max-width: 100%; height: auto;">
     </div> -->
 
-    <div class="card">
+    <div class="card fade-in">
       <h2>Abstract</h2>
       <p>
         Medical World Model (MeWM) is a generative model that simulates future disease states conditioned on clinical decisions. It integrates vision-language policy models to generate treatment plans and tumor dynamics models to predict visual disease progression or regression. An inverse dynamics module enables survival-guided evaluation of treatment efficacy and selection of optimal interventions. MeWM synthesizes post-treatment tumors with high realism validated by radiologists and outperforms medical-specialized GPTs in personalized treatment planning. It enhances interventional decision-making, improving the F1-score for optimal TACE protocol selection by 13%, demonstrating its potential as a second reader in clinical workflows.
@@ -191,13 +203,13 @@
       <img src="figs/framework.png" alt="Main Visual" class="image-placeholder" style="max-width: 100%; height: auto;">
     </div>
 
-    <div class="card">
+    <div class="card fade-in">
       <h2>Tumor Generation</h2>
       <img src="figs/tumor_generation.png" alt="Tumor Generation" class="image-placeholder" style="width: 80%;" >
 <!--       <img src="figs/generation_exp.png" alt="Tumor Generation" class="image-placeholder" style="width: 50%;" > -->
     </div>
 
-    <div class="card">
+    <div class="card fade-in">
       <h2>Survival Analysis</h2>
       <div class="image-row">
         <figure class="fig-a">
@@ -213,7 +225,7 @@
 
     
 
-    <div class="card">
+    <div class="card fade-in">
       <h2>Intervention Planning</h2>
       <img src="figs/intervention.png" alt="Intervention Planning" class="image-placeholder" style="width: 75%;" >
 <!--       <img src="figs/tab_in.png" alt="Intervention Planning" class="image-placeholder" style="width: 90%;" > -->
@@ -226,7 +238,7 @@
       </p>
     </div> -->
 
-    <div class="card">
+    <div class="card fade-in">
       <h2>BibTeX Citation</h2>
       <pre>
 @misc{yang2025medicalworldmodel,
@@ -250,5 +262,26 @@
     </div>
   </div>
 
+    <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+  
 </body>
 </html>
